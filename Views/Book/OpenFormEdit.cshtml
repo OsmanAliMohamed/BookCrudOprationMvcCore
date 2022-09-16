@@ -1,0 +1,22 @@
+﻿@using BooksCrudOperation.Models
+@model Book;
+@{
+    ViewData["Title"] = "OpenFormEdit";
+}
+
+<h1>Edit</h1>
+<form method ="post" asp-controller="Book" asp-action="Edit" asp-route-Id="@Model.Id">
+  <div class="form-group">
+    <label for="Title">Title</label>
+    <input type="text" class="form-control" name="Title" value="@Model.Title">
+  </div>
+  <div class="form-group">
+    <label for="Author">Author</label>
+    <input type="text" class="form-control" name="Author" value="@Model.Author">
+  </div>
+  <div class="form-group">
+    <label for="Description">Description</label>
+    <textarea  class="form-control" name="Description">@Model.Description</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Edit</button>
+</form>

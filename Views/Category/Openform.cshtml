@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Openform";
+}
+
+<h1>Add Category</h1>
+<body>
+    <form asp-controller="Category" asp-action="AddCategory" method="post">
+      <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" name="Name" placeholder="Enter Category Name">
+      </div>
+      <button type="submit" class="btn btn-primary">Add Category</button>
+    </form>
+</body>
+

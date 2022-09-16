@@ -1,0 +1,40 @@
+﻿@using BooksCrudOperation.Models
+@model List<Category>
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>Categories</h1>
+<head>
+<style>
+.myDiv {
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
+  padding:5px;
+  margin:20px;
+}
+</style>
+</head>
+<div class="justify-content-center">
+   @foreach (var item in Model)
+   {
+       <div class="myDiv">
+          <h2>@item.Name</h2>
+          <h4>Books In This Category</h4>
+          @if(item.Books != null)
+          {
+               @foreach (Book book in item.Books)
+               {
+                    @if (book != null)
+                    {
+                        <p>@book.Title</p>
+                    
+                    }
+               } 
+          }
+            
+        </div>  
+   }
+</div>
+

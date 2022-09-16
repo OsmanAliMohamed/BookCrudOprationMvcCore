@@ -1,0 +1,29 @@
+﻿@using BooksCrudOperation.Models;
+@model List<Category>
+
+<h1>AddBook</h1>
+<form method ="post" asp-controller="Book" asp-action="SaveBook">
+  <div class="form-group">
+    <label for="Title">Title</label>
+    <input type="text" class="form-control" name="Title" placeholder="Enter Title">
+  </div>
+  <div class="form-group">
+    <label for="Author">Author</label>
+    <input type="text" class="form-control" name="Author" placeholder="Author">
+  </div>
+  <div class="form-group">
+    <label for="Description">Description</label>
+    <textarea  class="form-control" name="Description" placeholder="Description"></textarea>
+  </div>
+  <div class="form-group">
+     <label for="catId">Categories</label>
+     <select name="catId" class="form-control">
+        @foreach(var item in Model)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+     </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Book</button>
+</form>
+

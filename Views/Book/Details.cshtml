@@ -1,0 +1,20 @@
+﻿@model BooksCrudOperation.Models.Book
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<table class="table">
+    <tr>
+        <td>@Model.Title</td>
+        <td>@Model.Author</td>
+        <td>@Model.Description</td>
+        <td>@Model.TimeOfAdd</td>
+        <td>
+           <a class="btn btn-primary" href="/Book/OpenFormEdit/@Model.Id">Edit</a>
+        </td>
+    <tr>
+</table>
+<button type="submit" class="btn btn-success"><a href="/Book/Index">Back To List</a></button>
+
+
